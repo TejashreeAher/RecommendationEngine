@@ -1,0 +1,118 @@
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.home</groupId>
+    <artifactId>recommendationEngine</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>RecommendationEngine</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>jsr311-api</artifactId>
+      <version>1.1.1</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.2.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+        <type>jar</type>
+    </dependency>
+    <dependency>
+	<groupId>com.googlecode.json-simple</groupId>
+	<artifactId>json-simple</artifactId>
+	<version>1.1</version>
+</dependency>
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20090211</version>
+</dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>skuprocessingengine.SKUProcessingEngine</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+
+    <!--repository>
+        <id>3</id>
+      <url>http://download.java.net/maven/2</url>
+    </repository -->
+    <repository>
+        <id>prime-repo</id>
+        <name>PrimeFaces Maven Repository</name>
+        <url>http://repository.primefaces.org</url>
+        <layout>default</layout>
+    </repository>
+    <repository>
+        <id>4</id>
+      <url>http://repo1.maven.org/maven2/</url>
+    </repository>
+    <repository>
+        <id>5</id>
+      <url>http://repository.apache.org/snapshots</url>
+    </repository>
+    <repository>
+        <id>6</id>
+      <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+    </repository>
+    <repository>
+        <id>7</id>
+      <url>http://repository.apache.org/snapshots/</url>
+    </repository>
+    <repository>
+        <id>8</id>
+      <url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+    </repository>
+    <repository>
+        <id>9</id>
+      <url>http://repo.opennms.org/maven2</url>
+    </repository>
+    <repository>
+            <id>1</id>
+    <url>http://garepos.myntra.com:8080/nexus/content/groups/public</url>
+    </repository>
+    <repository>
+        <id>2</id>
+      <url>http://garepos.myntra.com:8080/nexus/content/repositories/myntra-releases</url>
+    </repository>
+    <repository>
+        <id>10</id>
+      <url>http://garepos.myntra.com:8080/nexus/content/repositories/myntra-snapshots</url>
+    </repository>
+    </repositories>
+
+    </project>
