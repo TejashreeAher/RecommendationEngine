@@ -1,5 +1,5 @@
 Build command : mvn install
-This will create har in target folder
+This will create jar in target folder
 
 Run command : java -jar recommendationEngine-1.0-SNAPSHOT.jar $skucode
 
